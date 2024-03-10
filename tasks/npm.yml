@@ -1,0 +1,23 @@
+- name: Install npm and nodejs
+  become: true
+  community.general.pacman:
+    name:
+      - npm
+      - nodejs
+  tags: node
+
+- name: npmjs prefix
+  shell: mkdir -p ~/.local/.npm-global
+  tags: node
+
+- name: Add npm to path
+  shell: PATH=~/.local/.npm-global/bin:$PATH
+  tags: node
+
+- name: npmjs global
+  shell: npm config set prefix '~/.local/.npm-global'
+  tags: node
+
+- name: Export global settings(no dotfile install)
+  shell: export PATH=~/.local/.npm-global/bin:$PATH
+  tags: node

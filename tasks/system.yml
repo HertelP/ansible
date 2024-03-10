@@ -1,0 +1,20 @@
+- name: install system packages
+  become: true
+  community.general.pacman: 
+    name: 
+      - xorg-server
+      - xorg-xinit
+      - xf86-input-synaptics
+      - qt6ct
+      - ripgrep
+      - gtk3
+  tags: system
+
+- name: install terminal setup
+  become: true
+  community.general.pacman:
+    name:
+      - tmux
+      - neovim
+      - zoxide
+  tags: terminal
