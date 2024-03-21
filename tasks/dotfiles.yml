@@ -1,4 +1,5 @@
 - name: Installing stow
+  become: true
   community.general.pacman:
     name:
       - stow
@@ -7,7 +8,7 @@
 
 - name: Cloning dotfiles
   ansible.builtin.git:
-    repo: 'git@github.com:HertelP/dotfiles.git'
+    repo: 'https://github.com/HertelP/dotfiles.git'
     dest: "{{ lookup('env', 'HOME')}}/dotfiles"
     recursive: yes
     update: yes
