@@ -17,4 +17,5 @@
       - tmux
       - neovim
       - zoxide
+      - pass
   tags: terminal
