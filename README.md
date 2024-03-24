@@ -9,3 +9,6 @@
 
 # 3. Import password store keys
 **gpg --import --pinentry-mode loopback private.pgp**
+
+# 4. Set shell permission if not done already
+**sudo chmod o+rw $(tty)
