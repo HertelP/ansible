@@ -2,8 +2,7 @@
 **ansible-playbook --ask-vault-pass local.yml**
 
 # 2. Install remaining things
-**yay -S zsh-pure-prompt-git**
-**yay -S eww swww**
+**yay -S zsh-pure-prompt-git eww swww**
 
 # 2. Decrypt pass_keys
 **ansible-vault decrypt ...**
