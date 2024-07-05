@@ -8,6 +8,14 @@
       - qt6ct
       - ripgrep
       - gtk3
+      - fzf
+      - yazi
+      - poppler
+      - jq
+      - unar
+      - ffmpegthumbnailer
+      - cliphist
+      - wl-clipboard
   tags: system
 
 - name: install terminal setup
@@ -16,6 +24,7 @@
     name:
       - tmux
       - neovim
+      - nerd-fonts
       - zoxide
       - pass
   tags: terminal
