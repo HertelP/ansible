@@ -15,6 +15,7 @@
       - ffmpegthumbnailer
       - cliphist
       - wl-clipboard
+      - openssh
   tags: system
 
 - name: install terminal setup
