@@ -35,8 +35,4 @@
     recursive: yes
     update: yes
     accept_hostkey: yes
-    version: main
-
-- name: source tmux
-  ansible.builtin.shell: tmux source ~/.config/tmux/tmux.conf
 
