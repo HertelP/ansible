@@ -19,3 +19,16 @@
       - zoxide
       - pass
   tags: terminal
+
+- name: tmux config
+  ansible.builtin.git:
+    repo: 'https://github.com/tmux-plugins/tpm.git'
+    dest: "{{ lookup('env', 'HOME')}}/.tmux/plugins/tpm"
+    recursive: yes
+    update: yes
+    accept_hostkey: yes
+    version: main
+
+- name: source tmux
+  ansible.builtin.shell: tmux source ~/.config/tmux/tmux.conf
+
