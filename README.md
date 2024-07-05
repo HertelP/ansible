@@ -17,8 +17,9 @@
 # 4. Set shell permission if not done already
 **sudo chmod o+rw $(tty)**
 
-(already done usually)
-# 5. clone dotfiles repo
+
+
+# 5. clone dotfiles repo (already done usually)
 **git clone git@github.com:HertelP/dotfiles.git ~/.dotfiles**
 
 # 6. Stow files (remove already existing files if necessary)
