@@ -12,7 +12,6 @@
       - yazi
       - poppler
       - jq
-      - unar
       - ffmpegthumbnailer
       - cliphist
       - wl-clipboard
