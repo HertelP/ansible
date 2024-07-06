@@ -17,7 +17,7 @@
 **sudo chmod o+rw $(tty)**
 
 # 7. Install tmux plugins
-**<Leader> + I in Tmux**
+** <Leader> + I in Tmux**
 
 
 
