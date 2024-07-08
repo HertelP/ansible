@@ -16,3 +16,6 @@
     version: main
   tags:
     - dotfiles
+
+- name: Stow files
+  ansible.builtin.shell: cd {{ lookup('env', 'HOME')}}/dotfiles && stow .

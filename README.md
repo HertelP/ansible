@@ -1,20 +1,28 @@
 # 1. Install System
 **ansible-playbook --ask-vault-pass local.yml**
 
-# 2. Decrypt pass_keys
+# 2. Install remaining things
+**yay -S zsh-pure-prompt-git eww swww**
+
+# 3. Decrypt pass_keys
 **ansible-vault decrypt ...**
 
-# 3. Clone password store
+# 4. Clone password store
 **git clone git@github.com:HertelP/pass.git ~/.password-store**
 
-# 3. Import password store keys
+# 5. Import password store keys
 **gpg --import --pinentry-mode loopback private.pgp**
 
-# 4. Set shell permission if not done already
+# 6. Set shell permission if not done already
 **sudo chmod o+rw $(tty)**
 
-# 5. clone dotfiles repo
+# 7. Install tmux plugins
+**Leader + I in Tmux**
+
+
+
+# 8. clone dotfiles repo (already done usually)
 **git clone git@github.com:HertelP/dotfiles.git ~/.dotfiles**
 
-# 6. Stow files (remove already existing files if necessary)
+# 9. Stow files (remove already existing files if necessary)
 **stow .**
