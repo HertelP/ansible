@@ -10,16 +10,28 @@
     name: python-pywal
   tags: hyprland
 
-- name: install dunst
+- name: install hyprlock
   become: true
   community.general.pacman:
-    name: dunst 
+    name: hyprlock 
   tags: hyprland
 
-- name: install kitty
+- name: install hyprcursor
   become: true
   community.general.pacman:
-    name: kitty 
+    name: hyprcursor 
+  tags: hyprland
+
+- name: install hyprland workspaces
+  become: true
+  community.general.pacman:
+    name: hyprland-workspaces
+  tags: hyprland
+
+- name: install alacritty
+  become: true
+  community.general.pacman:
+    name: alacritty
   tags: terminal
 
 - name: install pass

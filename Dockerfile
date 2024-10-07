@@ -24,6 +24,7 @@ RUN  /usr/bin/ssh-keygen -A
 # Expose tcp port
 EXPOSE	 22
 
-ADD /Ansible /home/Ansible
+ADD /local.yml /home/local.yml
+ADD /tasks /home/tasks
 # Run openssh daemon
 CMD	 ["/usr/sbin/sshd", "-D"]

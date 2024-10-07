@@ -16,6 +16,10 @@
       - cliphist
       - wl-clipboard
       - openssh
+      - brightnessctl
+      - lswh
+      - pulseaudio
+      - alsa-utils
   tags: system
 
 - name: install terminal setup
