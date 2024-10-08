@@ -19,10 +19,14 @@
 # 7. Install tmux plugins
 **Leader + I in Tmux**
 
-
-
 # 8. clone dotfiles repo (already done usually)
 **git clone git@github.com:HertelP/dotfiles.git ~/.dotfiles**
 
 # 9. Stow files (remove already existing files if necessary)
 **stow .**
+
+# 10. Edit trust for gpg keys
+**gpg --edit-key philipph_95@icloud.com**
+
+# 11. Save fonts in correct directory
+The fonts in **.config** need to be saved in **/usr/share/fonts/TTF**
