@@ -7,8 +7,10 @@
     - dotfiles
 
 - name: Cloning dotfiles
+  become: no
+  become_user: "{{ ansible_user_id }}"
   ansible.builtin.git:
-    repo: 'https://github.com/HertelP/dotfiles.git'
+    repo: 'git@gitlab.com:HertelP/dotfiles.git'
     dest: "{{ lookup('env', 'HOME')}}/dotfiles"
     recursive: yes
     update: yes
