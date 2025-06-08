@@ -26,6 +26,6 @@ WORKDIR /home/${USER}
 
 ADD /local.yml /home/${USER}/local.yml
 ADD /tasks /home/${USER}/tasks
-ADD .ssh /home/${USER}/.ssh
-ADD .pass_keys /home/${USER}/.pass_keys
+ADD --chown=${USER}:${USER} .ssh /home/${USER}/.ssh
+ADD --chown=${USER}:${USER} .pass_keys /home/${USER}/.pass_keys
 CMD ["/bin/bash"]
