@@ -6,14 +6,14 @@
     create_home: yes
 
 - name: "Clone paru repository from AUR"
-  become: no
+  become: false
   become_user: "{{ ansible_user_id }}"
   ansible.builtin.git:
     repo: https://aur.archlinux.org/paru.git
     dest: "/home/{{ ansible_user_id }}/paru-build"
 
 - name: "Build and install paru package using makepkg"
-  become: no
+  become: false
   become_user: "{{ ansible_user_id }}"
   ansible.builtin.command:
     cmd: makepkg -si --noconfirm
@@ -21,7 +21,7 @@
     creates: /usr/bin/paru
 
 - name: "Clean up the build directory"
-  become: no
+  become: false
   become_user: "{{ ansible_user_id }}"
   ansible.builtin.file:
     path: "/home/{{ ansible_user_id }}/paru-build"

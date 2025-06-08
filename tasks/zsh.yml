@@ -4,18 +4,18 @@
     name: zsh
   tags: zsh 
 
-- name: Change shell to zsh
-  become: true
-  user:
-    name: "{{ ansible_user_id }}"
-    shell: chsh -s /bin/zsh
-  tags: zsh
+- name: Find the path of the zsh executable
+  ansible.builtin.command: which zsh
+  register: zsh_path_result
+  changed_when: false 
+  check_mode: false  
 
-- name: Install dash
+- name: Change shell for user to zsh
   become: true
-  community.general.pacman: 
-    name: dash
-  tags: dash 
+  ansible.builtin.user:
+    name: "{{ ansible_user_id }}"
+    shell: "{{ zsh_path_result.stdout }}" 
+  when: zsh_path_result.stdout != "" 
 
 - name: Change systemshell to dash
   become: true
