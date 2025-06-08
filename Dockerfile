@@ -6,6 +6,7 @@ RUN	 pacman -Syy
 
 RUN	 pacman -S --noconfirm openssh
 RUN	 pacman -S --noconfirm git ansible which sudo base-devel base vi linux-firmware linux nvim
+RUN	 pacman -Syu --noconfirm
 
 # Generate host keys
 # RUN  /usr/bin/ssh-keygen -A
