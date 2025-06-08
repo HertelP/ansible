@@ -5,6 +5,7 @@
       - xorg-server
       - xorg-xinit
       - xf86-input-synaptics
+      - wl-clipboard
       - qt6ct
       - ripgrep
       - gtk3
@@ -13,10 +14,7 @@
       - poppler
       - jq
       - ffmpegthumbnailer
-      - wl-clipboard
       - openssh
-      - pulseaudio
-      - alsa-utils
   tags: system
 
 - name: install terminal setup
@@ -28,4 +26,5 @@
       - nerd-fonts
       - zoxide
       - pass
+      - ttf-font-awesome
   tags: terminal
