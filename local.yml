@@ -14,7 +14,7 @@
       - install
       - core
   tasks:
-  - include_tasks: tasks/yay.yml
+  - include_tasks: tasks/paru.yml
   - include_tasks: tasks/npm.yml
   - include_tasks: tasks/zsh.yml
   - include_tasks: tasks/system.yml
