@@ -1,7 +1,0 @@
-- name: Install yay
-  ansible.builtin.git:
-    repo: https://aur.archlinux.org/yay.git
-    dest: /home/{{ansible_user_id}}/yay
-
-- name: Auth for yay
-  shell: sudo chown -R  {{ansible_user_id}}:users /home/{{ansible_user_id}}/yay && cd /home/{{ansible_user_id}}/yay && makepkg --noconfirm -si

@@ -19,6 +19,3 @@
 
 - name: Stow files
   ansible.builtin.shell: cd {{ lookup('env', 'HOME')}}/dotfiles && stow .
-
-- name: Change Authorization
-  ansible.builtin.shell: chmod +rwx ~/.config/scripts/suitcase_fullstack_start.sh
