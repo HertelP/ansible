@@ -2,6 +2,8 @@
   set_fact:
     aur_packages: 
       - name: pulseaudio
+      - name: pulseaudio-alsa
+      - name: pulseaudio-bluetooth
       - name: alacritty
       - name: hyprland
       - name: pywal-git
