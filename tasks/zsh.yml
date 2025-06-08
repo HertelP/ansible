@@ -9,6 +9,7 @@
   register: zsh_path_result
   changed_when: false 
   check_mode: false  
+  tags: zsh
 
 - name: Change shell for user to zsh
   become: true
@@ -16,10 +17,21 @@
     name: "{{ ansible_user_id }}"
     shell: "{{ zsh_path_result.stdout }}" 
   when: zsh_path_result.stdout != "" 
+  tags: zsh
 
-- name: Change systemshell to dash
+- name: Find the path of the dash executable
+  ansible.builtin.command: which dash
+  register: dash_path_result
+  changed_when: false
+  check_mode: false
+  tags: zsh
+
+- name: Point /bin/sh to dash
   become: true
-  user:
-    name: "{{ ansible_user_id }}"
-    shell: ln -sf /bin/dash /bin/sh
+  ansible.builtin.file:
+    src: "{{ dash_path_result.stdout }}" 
+    dest: /bin/sh                  
+    state: link                     
+    force: yes                       
+  when: dash_path_result.stdout != ""
   tags: zsh

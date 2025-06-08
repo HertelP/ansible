@@ -1,0 +1,11 @@
+- name: Cloning neovim
+  become: no
+  become_user: "{{ ansible_user_id }}"
+  ansible.builtin.git:
+    repo: 'git@gitlab.com:HertelP/neovim.git'
+    dest: "{{ lookup('env', 'HOME')}}/.config/nvim"
+    recursive: yes
+    update: yes
+    accept_hostkey: yes
+    version: main
+  tags: nvim

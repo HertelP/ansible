@@ -27,4 +27,5 @@
       - zoxide
       - pass
       - ttf-font-awesome
-  tags: terminal
+      - dash
+  tags: system
