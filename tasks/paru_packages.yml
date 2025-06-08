@@ -1,6 +1,7 @@
 - name: Set packages
   set_fact:
-    aur_package: 
+    aur_packages: 
+      - name: pulseaudio
       - name: alacritty
       - name: hyprland
       - name: pywal-git
@@ -9,18 +10,16 @@
       - name: hyprland-workspaces
       - name: hyprcursor
       - name: rose-pine-hyprcursor
-      - name: pass-import
       - name: docker
       - name: docker-buildx
       - name: ueberzugpp
       - name: pulsemixer
-      - name: pulseaudio
       - name: bluetui
       - name: hyprshot
       - name: wl-screenrec
       - name: waybar
       - name: wlogout
-      - name: zen-bin
+      - name: zen-browser-bin
 
 - name: Ensure paru is installed
   ansible.builtin.stat:
