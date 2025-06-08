@@ -1,4 +1,4 @@
-- name: install zsh
+- name: Install zsh
   become: true
   community.general.pacman: 
     name: zsh
@@ -8,5 +8,18 @@
   become: true
   user:
     name: "{{ ansible_user_id }}"
-    shell: /usr/bin/zsh
+    shell: chsh -s /bin/zsh
+  tags: zsh
+
+- name: Install dash
+  become: true
+  community.general.pacman: 
+    name: dash
+  tags: dash 
+
+- name: Change systemshell to dash
+  become: true
+  user:
+    name: "{{ ansible_user_id }}"
+    shell: ln -sf /bin/dash /bin/sh
   tags: zsh

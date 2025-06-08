@@ -1,0 +1,43 @@
+- name: Set packages
+  set_fact:
+    aur_package: 
+      - name: alacritty
+      - name: hyprland
+      - name: pywal-git
+      - name: swww
+      - name: hyprlock
+      - name: hyprland-workspaces
+      - name: hyprcursor
+      - name: rose-pine-hyprcursor
+      - name: rose-pine-cursor
+      - name: pass-import
+      - name: docker
+      - name: docker-buildx
+      - name: ueberzugpp
+      - name: pulsemixer
+      - name: bluetui
+      - name: hyprshot
+      - name: wl-screenrec
+      - name: waybar
+      - name: w-logout
+      - name: zen-bin
+
+- name: Ensure paru is installed
+  ansible.builtin.stat:
+    path: /usr/bin/paru
+  register: paru_check
+  failed_when: not paru_check.stat.exists
+  changed_when: false
+
+- name: Install specified AUR packages with paru
+  become: no
+  become_user: "{{ ansible_user_id }}"
+      
+  ansible.builtin.command:
+    cmd: "paru -S --noconfirm {{ item.name }}"
+      
+  loop: "{{ aur_packages }}"
+      
+  loop_control:
+    label: "{{ item.name }}"
+

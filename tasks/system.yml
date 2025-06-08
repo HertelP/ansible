@@ -13,11 +13,8 @@
       - poppler
       - jq
       - ffmpegthumbnailer
-      - cliphist
       - wl-clipboard
       - openssh
-      - brightnessctl
-      - lswh
       - pulseaudio
       - alsa-utils
   tags: system
@@ -32,12 +29,3 @@
       - zoxide
       - pass
   tags: terminal
-
-- name: tmux config
-  ansible.builtin.git:
-    repo: 'https://github.com/tmux-plugins/tpm.git'
-    dest: "{{ lookup('env', 'HOME')}}/.tmux/plugins/tpm"
-    recursive: yes
-    update: yes
-    accept_hostkey: yes
-
