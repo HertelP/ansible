@@ -2,7 +2,7 @@
   hosts: localhost
   vars: 
     source_key: "./.ssh/id_ed25519"
-    dest_key: "{{ lookup('env', 'HOME') }}/{{ ansible_user_id }}/.ssh/id_ed25519"
+    dest_key: "{{ lookup('env', 'HOME') }}/.ssh/id_ed25519"
     #personal: "{{ lookup('env', 'HOME') }}/personal"
   pre_tasks:
   - name: Update System
